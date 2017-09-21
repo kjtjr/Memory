@@ -11,6 +11,7 @@ Vue.use(Vuex, VueLodash, lodash)
 const state = {
   numbers : _.shuffle([1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]),
   score : 0,
+  wrong : 0,
   cardOne : 0,
   cardTwo : 0,
   endTurn: false

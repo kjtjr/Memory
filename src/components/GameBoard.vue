@@ -1,6 +1,6 @@
 <template>
   <div id="gameboard">
-    <div class="card" v-bind:id = "number" v-bind:ref = "number" v-for="number in numbers"><span @click="getValue">{{number}}</span></div>
+    <div class="card" v-for="number in numbers" @click="getValue"><span >{{number}}</span></div>
   </div>
 </template>
 
@@ -61,6 +61,8 @@ export default {
 span {
   font-family: Calibri;
   font-size:3em;
+  pointer-events: none;
+  display:none;
 }
 .green{
   background-color:green;
@@ -68,6 +70,10 @@ span {
 
 .gray {
   background-color:gray;
+  pointer-events:none;
+}
+.gray span {
+  display:block;
 }
 
 .matched {
@@ -77,8 +83,14 @@ span {
   cursor:not-allowed;
 }
 
+.matched span {
+  display:block;
+}
+
 .wrong {
   transition: background-color 0.5s ease;
   background-color: red;
 }
+
+
 </style>

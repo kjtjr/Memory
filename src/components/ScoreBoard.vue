@@ -1,35 +1,28 @@
 <template>
-<div id = "wrapper">
-  <h1>Memory</h1>
-  <scoreBoard></scoreBoard>
-  <gameBoard></gameBoard>
+<div id="wrapper">
+    <h1>Correct Guesses: {{score}}</h1>
+    <h1>Incorrect Guesses: {{wrong}}</h1>
 </div>
 </template>
 
 <script>
-import GameBoard from './GameBoard'
-import ScoreBoard from './ScoreBoard'
 import { mapState } from 'vuex'/*
 import { mapMutations } from 'vuex'
 import { mapGetters } from 'vuex'
 import { mapActions } from 'vuex'*/
 
 export default {
-  name: 'template',
-  components: {
-    'scoreBoard':ScoreBoard,
-    'gameBoard':GameBoard
-  },
+  name: 'scoreboard',
   data () {
     return {
     }
   },
   computed: {
      ...mapState([
-       'score',
-       'wrong'
-    ]),
-    /*...mapGetters([
+         'score',
+         'wrong'
+    ])/*,
+    ...mapGetters([
     ]),
     ...mapMutations([
     ]),
@@ -43,7 +36,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+h1 {
+  font-weight:300;
 }
 </style>
